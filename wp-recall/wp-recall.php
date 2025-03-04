@@ -3,7 +3,7 @@
   Plugin Name: WP-Recall
   Plugin URI: https://codeseller.ru/?p=69
   Description: Фронт-енд профиль, система личных сообщений и рейтинг пользователей на сайте вордпресс.
-  Version: 16.26.10
+  Version: 16.26.12
   Author: Plechev Andrey
   Author URI: https://codeseller.ru/
   Text Domain: wp-recall
@@ -16,7 +16,7 @@
 
 final class WP_Recall {
 
-	public $version = '16.26.10';
+	public $version = '16.26.11';
 	public $child_addons = array();
 	public $need_update = false;
 	public $fields = array();
@@ -285,7 +285,7 @@ final class WP_Recall {
 		//если вывод ЛК через шорткод
 		if ( rcl_get_option( 'view_user_lk_rcl' ) == 1 ) {
 
-			$get     = rcl_get_option( 'link_user_lk_rcl', 'user' );
+			$get     = esc_url(rcl_get_option( 'link_user_lk_rcl', 'user' ));
 			$user_LK = ( isset( $_GET[ $get ] ) ) ? intval( $_GET[ $get ] ) : false;
 
 			if ( ! $user_LK ) {

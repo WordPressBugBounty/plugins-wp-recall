@@ -165,6 +165,10 @@ function rcl_preview_post() {
 	rcl_verify_ajax_nonce();
 	rcl_reset_wp_dependencies();
 
+	if(!current_user_can('author')){
+		wp_send_json( [ 'error' => __( 'Вы не можете редактировать эту публикацию', 'wp-recall' ) ] );
+	}
+
 	$data_post_id    = isset( $_POST['post_id'] ) ? absint( $_POST['post_id'] ) : 0;
 	$data_user_email = ! empty( $_POST['email-user'] ) ? sanitize_email( wp_unslash( $_POST['email-user'] ) ) : '';
 	$data_user_login = ! empty( $_POST['name-user'] ) ? sanitize_user( wp_unslash( $_POST['name-user'] ) ) : '';

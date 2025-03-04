@@ -99,11 +99,6 @@ class RCL_Install {
 				'title'   => __( 'Personal cabinet', 'wp-recall' ),
 				'content' => '[wp-recall]'
 			),
-			'feed_page_rcl'  => array(
-				'name'    => 'user-feed',
-				'title'   => __( 'FEED', 'wp-recall' ),
-				'content' => '[feed]'
-			),
 			'users_page_rcl' => array(
 				'name'    => 'users',
 				'title'   => __( 'Users', 'wp-recall' ),
@@ -132,7 +127,6 @@ class RCL_Install {
 			'rating-system',
 			'review',
 			'profile',
-			'feed',
 			'publicpost',
 			'rcl-chat'
 		) );

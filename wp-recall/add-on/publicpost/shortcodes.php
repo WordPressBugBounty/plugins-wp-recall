@@ -7,7 +7,7 @@ function rcl_publicform( $atts ) {
 		return false;
 	}
 
-	$form = new Rcl_Public_Form( $atts );
+	$form = new Rcl_Public_Form( array_map('esc_attr', $atts) );
 
 	return $form->get_form();
 }
