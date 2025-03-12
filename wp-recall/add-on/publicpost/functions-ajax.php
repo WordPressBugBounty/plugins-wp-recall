@@ -165,7 +165,7 @@ function rcl_preview_post() {
 	rcl_verify_ajax_nonce();
 	rcl_reset_wp_dependencies();
 
-	if(!current_user_can('author')){
+	if(!current_user_can('publish_posts')){
 		wp_send_json( [ 'error' => __( 'Вы не можете редактировать эту публикацию', 'wp-recall' ) ] );
 	}
 
