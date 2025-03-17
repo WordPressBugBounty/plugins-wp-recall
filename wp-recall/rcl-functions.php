@@ -887,7 +887,7 @@ function rcl_get_user_url( $user_id ) {
 
 	return add_query_arg(
 		[
-			esc_url(rcl_get_option( 'link_user_lk_rcl', 'user' )) => $user_id,
+			rcl_get_option( 'link_user_lk_rcl', 'user' ) => $user_id,
 		], get_permalink( rcl_get_option( 'lk_page_rcl' ) )
 	);
 }
